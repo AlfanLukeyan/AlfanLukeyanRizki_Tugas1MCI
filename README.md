@@ -73,6 +73,13 @@ Berikut merupakan screenshot hasil query tersebut: </br>
 Tampilkan daftar nama, semester dan ipk berdasarkan ipk tertinggi tiap semester. Diurutkan berdasarkan semesternya. Jika ada yang nilainya sama, maka diurutkan berdasarkan alfabet.
 
 ### Penyelesaian
+- Pertama, membuat subquery untuk menghitung IPK tertinggi pada masing masing semester. Hasil subquery tersebut kemudian akan disimpan pada tabel yang baru.
+```SQL
+SELECT semester, MAX(ipk) as max_ipk
+FROM table
+GROUP BY semester
+```
+- Selanjutnya, subquery akan digabung dengan query utama dan melakukan `JOIN` untuk memfilter data berdasarkan semester dan nilai IPK tertinggi. Jika terdapat nilai yang sama maka akan di urutkan berdasarkan nama mahasiswa secara alfabetikal 
 
 ```SQL
 SELECT t1.nama, t1.semester, t1.ipk
@@ -88,3 +95,12 @@ ORDER BY t1.semester, t1.nama;
 ### Output
 Berikut merupakan screenshot hasil query tersebut: </br>
 ![Output-5](/SQL/assets/5.png "Output Soal 5")
+
+## Author
+
+Alfan Lukeyan Rizki - 5025211046
+
+## Tools
+
+- Visual Studio Code
+- PostgreSQL pgAdmin 4
