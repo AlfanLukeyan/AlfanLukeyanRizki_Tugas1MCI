@@ -1,23 +1,22 @@
-// Fungsi callback untuk menampilkan pesan jika buku berhasil diterbitkan
-function publishBookCallback(err, success) {
-    if (err) {
-      console.error(err);
+/* Callback function to display a message if the website project is successful */
+function finishProjectCallback(err, success) {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(success);
+  }
+}
+
+/* Asynchronous functions with callbacks */
+function finishProject(projectName, developer, deadline, callback) {
+  setTimeout(() => {
+    if (!projectName || !developer || !deadline) {
+      callback('Incomplete data', null);
     } else {
-      console.log(success);
+      callback(null, `The ${projectName} project by ${developer} has been completed before ${deadline}`);
     }
-  }
-  
-  // Fungsi asynchronous dengan callback
-  function publishBook(title, author, publisher, callback) {
-    setTimeout(() => {
-      if (!title || !author || !publisher) {
-        callback('Data tidak lengkap', null);
-      } else {
-        callback(null, `Buku ${title} oleh ${author} telah diterbitkan oleh ${publisher}`);
-      }
-    }, 2000);
-  }
-  
-  // Implementasi target hidup
-  publishBook('Membangun Bisnis Startup', 'Jane Doe', 'Majalah Entrepreneur', publishBookCallback);
-  
+  }, 5000);
+}
+
+/* life targets */
+finishProject('Website E-commerce Coffee', 'Alfan', '29 December 2023', finishProjectCallback);

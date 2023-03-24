@@ -30,7 +30,7 @@ ORDER BY ukt DESC, nama ASC;
 Berikut merupakan screenshot hasil query tersebut: </br>
 ![Output-2](/SQL/assets/2.png "Output Soal 2")
 
-Berikut merupkan grafik keseluruhan data. </br>
+Berikut merupakan grafik keseluruhan data. </br>
 ![2-Graph](/SQL/assets/2-graph.png "graph no 2")
 
 ## Soal-3
